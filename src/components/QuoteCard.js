@@ -1,14 +1,28 @@
 import React from 'react';
 
-const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote }) =>
+const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote, favQuote}) =>
+
   <div>
+      {/* <h1>inside quote card</h1> */}
     <div className="card card-inverse card-success card-primary mb-3 text-center">
       <div className="card-block">
         <blockquote className="card-blockquote">
    
           <p>{quote.content}</p>
 
+
+
+          {/* <input
+            type="button"
+            onClick={() => favQuote(quote.id)}
+            className="btn btn-primary"
+          >
+            favQuote
+          </input> */}
+
+
           <footer>- author <cite title="Source Title">{quote.author}</cite></footer>
+          <footer>- favQuote <cite title="Source Title">{quote.favQuote}</cite></footer>
         </blockquote>
       </div>
       <div className="float-right">
@@ -20,6 +34,9 @@ const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote }) =>
           >
             Upvote
           </button>
+
+
+
 
           <button
             type="button"

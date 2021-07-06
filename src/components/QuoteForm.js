@@ -8,7 +8,9 @@ class QuoteForm extends Component {
   state = {
     //set up a controlled form with internal state
     content: '', 
-    author: ''
+    author: '',
+    favQuote: false
+
   }
 
   handleOnChange = event => {
@@ -16,8 +18,13 @@ class QuoteForm extends Component {
     console.log(event.target.value)
     console.log(event.target.name)
     const { value, name } = event.target;
+
+        // const target = event.target;
+        // const value = target.type === 'checkbox' ? event.target.checked : event.target.value;
+        // const name = target.name;
     this.setState({
       [name]: value
+      // [event.target.id]: event.target.value
     });
   }
 
@@ -32,7 +39,8 @@ class QuoteForm extends Component {
     this.props.addQuote(quote);
     this.setState({ 
       content: '', 
-      author: ''
+      author: '',
+      favQuote: false
     });
   }
 
@@ -65,7 +73,24 @@ class QuoteForm extends Component {
                         value={this.state.author}
                         onChange={this.handleOnChange}
                       />
-                    </div>
+                    </div><br/>
+
+
+                    
+                    <div className="form-group"></div>
+                    <label htmlFor="author" className="col-md-4 control-label">Fav Quote</label>
+                    <div className="col-md-5">
+                      <input
+                        className="form-control"
+                        type="checkbox"
+                        name="favQuote"
+                        checked={this.state.favQuote}
+                        onChange={this.handleOnChange}
+                      />
+                    </div><br/>
+
+
+
                   </div>
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">

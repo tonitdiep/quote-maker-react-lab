@@ -25,6 +25,14 @@ export const addQuote = quote => {
   }
 }
 
+// export const favQuote = quoteId => {
+//   console.log('favQuote', quoteId)
+// return {
+//   type: 'FAV_QUOTE',
+//   quoteId
+// //   quote: Object.assign({}, quote, { votes: 0 })
+// }
+// }
 export const downvoteQuote = quoteId => {
     return {
       type: 'DOWNVOTE_QUOTE',
