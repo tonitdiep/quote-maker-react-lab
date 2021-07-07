@@ -10,6 +10,10 @@ let quote;
         // console.log('remove in reducers', action)
           return state.filter(quote => quote.id !== action.quoteId);
   
+      case 'EDIT_QUOTE':
+            // console.log('remove in reducers', action)
+              return state.filter(quote => quote.id !== action.quoteId);
+
     case 'UPVOTE_QUOTE':
         // console.log('upvote reducers', action)
         index = state.findIndex(quote => quote.id === action.quoteId);

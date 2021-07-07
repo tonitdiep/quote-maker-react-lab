@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuoteCard from '../components/QuoteCard';
-import { removeQuote, upvoteQuote, downvoteQuote, favQuote } from '../actions/quotes';
+import { removeQuote, upvoteQuote, downvoteQuote, editQuote } from '../actions/quotes';
 
 class Quotes extends Component {
 
   render() {
-    const {quotes, removeQuote, upvoteQuote, downvoteQuote} = this.props
+    const {quotes, removeQuote, upvoteQuote, downvoteQuote, editQuote} = this.props
     return (
       <div>
         <hr />
@@ -39,4 +39,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, {removeQuote, upvoteQuote, downvoteQuote} )(Quotes);
+export default connect(mapStateToProps, {removeQuote, upvoteQuote, downvoteQuote, editQuote} )(Quotes);

@@ -14,14 +14,16 @@ class QuoteForm extends Component {
   }
 
   handleOnChange = event => {
+
     // Handle Updating Component State
     console.log(event.target.value)
     console.log(event.target.name)
-    const { value, name } = event.target;
+    console.log(event.target.type)
+    // const { value, name } = event.target;
 
-        // const target = event.target;
-        // const value = target.type === 'checkbox' ? event.target.checked : event.target.value;
-        // const name = target.name;
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
     this.setState({
       [name]: value
       // [event.target.id]: event.target.value
@@ -78,7 +80,7 @@ class QuoteForm extends Component {
 
                     
                     <div className="form-group"></div>
-                    <label htmlFor="author" className="col-md-4 control-label">Fav Quote</label>
+                    <label htmlFor="favQuote" className="col-md-4 control-label">Fav Quote</label>
                     <div className="col-md-5">
                       <input
                         className="form-control"

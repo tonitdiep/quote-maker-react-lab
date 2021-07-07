@@ -7,6 +7,12 @@ export const addQuote = quote => {
     }
   }
 
+  export const editQuote = quote => {
+    return {
+      type: 'EDIT_QUOTE',
+      quote: Object.assign({}, quote, { votes: 0 })
+    }
+  }
   export const removeQuote = quoteId => {
       console.log('removeQuote', removeQuote)
     return {

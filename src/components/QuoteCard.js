@@ -1,9 +1,11 @@
 import React from 'react';
-
+// const handleEdit = (quote) => {
+//     editRecipe(quote.id)
+// }
 const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote, favQuote}) =>
 
   <div>
-      {/* <h1>inside quote card</h1> */}
+console.log("inside quote card", quote.favQuote)  
     <div className="card card-inverse card-success card-primary mb-3 text-center">
       <div className="card-block">
         <blockquote className="card-blockquote">
@@ -12,17 +14,13 @@ const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote, favQuote}) =
 
 
 
-          {/* <input
-            type="button"
-            onClick={() => favQuote(quote.id)}
-            className="btn btn-primary"
-          >
-            favQuote
-          </input> */}
-
 
           <footer>- author <cite title="Source Title">{quote.author}</cite></footer>
-          <footer>- favQuote <cite title="Source Title">{quote.favQuote}</cite></footer>
+          {/* <footer>- favQuote <cite title="Source Title">{quote.favQuote}</cite></footer> */}
+  {/* {quote? quote.favQuote : null} */}
+          {quote.favQuote ? <p>Fav Quote Checked </p> : <p>Fav Quote Unchecked </p> }
+          {/* <button onClick={() => handleEdit(quote)}>Edit</button>  */}
+          {/* {quote.favQuote ? <p>Fav Quote Checked </p> : null }  */}
         </blockquote>
       </div>
       <div className="float-right">
@@ -59,3 +57,14 @@ const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote, favQuote}) =
   </div>;
 
 export default QuoteCard;
+
+
+
+
+          {/* <input
+            type="button"
+            onClick={() => favQuote(quote.id)}
+            className="btn btn-primary"
+          >
+            favQuote
+          </input> */}
