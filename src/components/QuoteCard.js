@@ -1,11 +1,14 @@
 import React from 'react';
-// const handleEdit = (quote) => {
-//     editRecipe(quote.id)
-// }
-const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote, favQuote}) =>
 
+const QuoteCard = ({quote, removeQuote, upvoteQuote, downvoteQuote}) => {
+      //   const handleEdit = (quote) => {
+      //     editRecipe(quote.id)
+      // }
+  console.log("inside quote card", quote)  
+  return (
+    
   <div>
-console.log("inside quote card", quote.favQuote)  
+
     <div className="card card-inverse card-success card-primary mb-3 text-center">
       <div className="card-block">
         <blockquote className="card-blockquote">
@@ -17,10 +20,10 @@ console.log("inside quote card", quote.favQuote)
 
           <footer>- author <cite title="Source Title">{quote.author}</cite></footer>
           {/* <footer>- favQuote <cite title="Source Title">{quote.favQuote}</cite></footer> */}
-  {/* {quote? quote.favQuote : null} */}
+
           {quote.favQuote ? <p>Fav Quote Checked </p> : <p>Fav Quote Unchecked </p> }
           {/* <button onClick={() => handleEdit(quote)}>Edit</button>  */}
-          {/* {quote.favQuote ? <p>Fav Quote Checked </p> : null }  */}
+
         </blockquote>
       </div>
       <div className="float-right">
@@ -54,7 +57,10 @@ console.log("inside quote card", quote.favQuote)
         <div>Votes: {quote.votes}</div>
       </div>
     </div>
-  </div>;
+  </div>
+
+  )}
+
 
 export default QuoteCard;
 
